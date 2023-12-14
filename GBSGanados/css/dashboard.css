@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Marcellus&display=swap');
+
+body {
+    background-color: #243b23;
+    font-family: 'Marcellus', 'serif';
+    margin: 0;
+}
+
+.h1{
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+
+.formulario{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    background-color: #809C64;
+    padding: 70px;
+    margin: 8%;
+    margin-bottom: 40%;
+    
+}
+
+.campus{
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    align-items: center;  
+    background-color: #bad787;
+    padding: 15px;
+    border-radius: 50px;
+    margin-right: 300px;
+    margin: 1%;
+    width: 100%;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+

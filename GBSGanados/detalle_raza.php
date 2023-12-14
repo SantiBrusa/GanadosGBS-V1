@@ -6,8 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="img/logoredondo.png" type="image/x-icon">
     <link rel="stylesheet" href="css/styles.css">
-    <title>Ganados GBS - Noticia</title>
-    <style>
+    <title>Ganados GBS - Raza</title>
+</head>
+
+<style>
         /* Estilos CSS para la página de detalles de la noticia */
         .gnrl2 {
             display: flex;
@@ -40,15 +42,15 @@
             flex-direction: row;
             padding: 10px;
             background-color: #556d4a;
-            max-width: 60%;
-            max-height: 60%;
+            max-width: 100%;
+            max-height: 100%;
             margin-left: 4%;
             margin-top: 1%;
         }
 
         .img4 img{
-            width: 620px;
-            height: 580px;
+            width: 580px;
+            height: 620px;
         }
 
         .text {
@@ -67,9 +69,9 @@
             color: rgb(209, 195, 195);
         }
     </style>
-</head>
 
 <body>
+
     <header class="header">
         <div>
             <img src="img/logoredondo.png" alt="Logo" width="60px">
@@ -103,15 +105,15 @@
                     }
 
                     // Consulta SQL para obtener la noticia específica
-                    $sql = "SELECT * FROM tb_noticias WHERE cod = $noticia_id";
+                    $sql = "SELECT * FROM tb_razas WHERE cod = $noticia_id";
                     $result = $conn->query($sql);
 
                     // Verificar si se encontró la noticia
                     if ($result->num_rows > 0) {
                         $row = $result->fetch_assoc();
-                        echo '<img src="' . $row['imagen'] . '" alt="Noticia">';
+                        echo '<img src="' . $row['image'] . '" alt="Raza">';
                     } else {
-                        echo '<p>No se encontró la noticia.</p>';
+                        echo '<p>No se encontró la raza.</p>';
                     }
 
                     // Cerrar la conexión
@@ -136,15 +138,15 @@
                         }
 
                         // Consulta SQL para obtener la noticia específica
-                        $sql = "SELECT * FROM tb_noticias WHERE cod = $noticia_id";
+                        $sql = "SELECT * FROM tb_razas WHERE cod = $noticia_id";
                         $result = $conn->query($sql);
 
                         // Verificar si se encontró la noticia
                         if ($result->num_rows > 0) {
                             $row = $result->fetch_assoc();
-                            echo '<h1>' . $row['titulo'] . '</h1>';
+                            echo '<h1>' . $row['name'] . '</h1>';
                         } else {
-                            echo '<p>No se encontró la noticia.</p>';
+                            echo '<p>No se encontró la raza.</p>';
                         }
 
                         // Cerrar la conexión
@@ -168,15 +170,15 @@
                         }
 
                         // Consulta SQL para obtener la noticia específica
-                        $sql = "SELECT * FROM tb_noticias WHERE cod = $noticia_id";
+                        $sql = "SELECT * FROM tb_razas WHERE cod = $noticia_id";
                         $result = $conn->query($sql);
 
                         // Verificar si se encontró la noticia
                         if ($result->num_rows > 0) {
                             $row = $result->fetch_assoc();
-                            echo '<p>' . $row['descripcion'] . '</p>';
+                            echo '<p>' . $row['text'] . '</p>';
                         } else {
-                            echo '<p>No se encontró la noticia.</p>';
+                            echo '<p>No se encontró la raza.</p>';
                         }
 
                         // Cerrar la conexión
@@ -186,7 +188,6 @@
                     }
                     ?>
                 </div>
-                
             </div>
         </div>
     </main>

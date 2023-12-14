@@ -7,7 +7,8 @@ if (!tieneSesionAdmin()) {
     exit();
 }
 
-function tieneSesionAdmin() {
+function tieneSesionAdmin()
+{
     return isset($_SESSION['usuario']);
 }
 
@@ -31,19 +32,30 @@ if (isset($_SESSION['usuario'])) {
 <!DOCTYPE html>
 <html lang="es">
 
+
 <head>
     <!-- Encabezado del Dashboard del Administrador -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/logoredondo.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <title>Ganados GBS - Admin</title>
 </head>
 
 <body>
-    <h1>Bienvenido al Dashboard del Administrador, <?php echo $_SESSION['usuario']; ?>!</h1>
-    <!-- Contenido del Dashboard -->
+    <div class="h1">
+        <h1>Bienvenido al Dashboard del Administrador,
+            <?php echo $_SESSION['usuario']; ?>!
+        </h1>
+    </div>
 
-    <a href="cargarNotice.php">Cargar Noticia</a> <br>
+    <div class="formulario">
+        <div class="campus"><a href="cargarNotice.php">Cargar Noticia</a> <br></div>
 
-    <a href="registrarraza.php">Cargar Raza</a> <br>
+        <div class="campus"><a href="registrarraza.php">Cargar Raza</a> <br></div>
 
-    <a href="registrarcomisionista.php">Cargar Agente</a> <br>
+        <div class="campus"><a href="registrarcomisionista.php">Cargar Agente</a> <br></div>
+    </div>
 
 
 </body>

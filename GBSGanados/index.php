@@ -224,7 +224,8 @@
                 echo '<div class="fondo-noti">';
                 while ($row = $result->fetch_assoc()) {
                     echo '<div class="noti">';
-                    echo '<a href="detalle_noticia.php">';
+                    // Modifica el enlace para incluir el ID de la noticia
+                    echo '<a href="detalle_noticia.php?id=' . $row['cod'] . '">';
                     echo '<img src="' . $row['imagen'] . '" alt="Noticia" width="380px" height="360px">';
                     echo '<h1>' . $row['titulo'] . '</h1>';
                     echo '</a>';
@@ -234,6 +235,7 @@
             } else {
                 echo '<p>No hay noticias disponibles.</p>';
             }
+
 
             // Cerrar la conexión
             $conn->close();
@@ -273,7 +275,7 @@
                 echo '<div class="fondo-razas">';
                 while ($row = $result->fetch_assoc()) {
                     echo '<div class="raza">';
-                    echo '<a href="raza.html">';
+                    echo '<a href="detalle_raza.php?id=' . $row['cod'] . '">';
                     echo '<img src="' . $row['image'] . '" alt="Raza" width="380px" height="360px">';
                     echo '<h1>' . $row['name'] . '</h1>';
                     echo '</a>';
@@ -323,9 +325,9 @@
                 echo '<div class="fondo-com">';
                 while ($row = $result->fetch_assoc()) {
                     echo '<div class="comi">';
+                    echo '<a href="detalle_comisionista.php?id=' . $row['cod'] . '">';
                     echo '<img src="' . $row['image'] . '" alt="Comisionista" width="380px" height="360px">';
                     echo '<h1>' . $row['name'] . '</h1>';
-                    echo '<p>' . $row['text'] . '</p>';
                     echo '</div>';
                 }
                 echo '</div>';
